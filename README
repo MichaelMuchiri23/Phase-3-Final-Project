@@ -1,0 +1,35 @@
+TASK MANAGER APP
+Introduction
+Task Manager CLI application, a Python-based command-line tool integrated with SQLAlchemy 
+for efficient task management.
+
+Problem Statement:
+In the fast-paced world, managing tasks efficiently is crucial for personal and professional 
+productivity. To address this need, we aim to develop a Command-Line Interface (CLI) 
+application that allows users to create, manage, and organize their tasks seamlessly.
+
+Solution:
+The Task Manager CLI application is designed to help users manage their tasks efficiently 
+through a command-line interface. Users can create, view, update, and delete tasks, ensuring 
+better organization and productivity.
+This is an application where:
+• Users can create tasks by providing a title, description and due date.
+• Display a list of all tasks with relevant details such as title and due date.
+• Users can modify task details, including title, description and due date.
+• Ability to delete tasks individually.
+
+Minimum Viable Product:
+1. Create a task.
+2. Update a task
+3. Delete a task.
+4. Display all tasks.
+Technologies used:
+1. Python: Programming language for application logic.
+2. SQLAlchemy: ORM for interaction with the SQLite database.
+3. SQLite: Database for storing task information.
+4. Typer: Library for building command-line interfaces.
+5. Rich: for a colorized terminal output.
+
+
+Author: MichaelMuchiri23, codeitownit, KittyRobbin, gichez
+License: None
