@@ -32,8 +32,8 @@ def show():
     table.add_column("#", style="dim", width=6 )
     table.add_column("Todo", min_width=20, style="cyan")
     table.add_column("Description", min_width=12, justify="right", style="magenta")
-    table.add_column("Description", min_width=12, justify="right", style="white")
-    table.add_column("Priority", min_width=12, justify="right", style="green")
+    table.add_column("Category", min_width=12, justify="right", style="white")
+    table.add_column("Status", min_width=12, justify="right", style="green")
 
 
     all_tasks=query_todo.fetch_all()
