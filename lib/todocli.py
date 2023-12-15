@@ -25,7 +25,6 @@ def update(task_id: int, title: str = None, description: str = None, category_id
 
 @app.command() 
 def show():
-    
     console.print("[bold magenta]Todos[/bold magenta]!")
 
     table = Table(show_header=True, header_style="bold red")
@@ -33,7 +32,7 @@ def show():
     table.add_column("Todo", min_width=20, style="cyan")
     table.add_column("Description", min_width=12, justify="right", style="magenta")
     table.add_column("Category", min_width=12, justify="right", style="white")
-    table.add_column("Status", min_width=12, justify="right", style="green")
+    table.add_column("Status of task", min_width=12, justify="right", style="green")
 
 
     all_tasks=query_todo.fetch_all()
