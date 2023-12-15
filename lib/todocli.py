@@ -19,9 +19,9 @@ def delete():
     pass
 
 @app.command()
-def update():
-    pass
-
+def update(task_id: int, title: str = None, description: str = None, category_id: int = None, tag_id: int = None):
+    query_todo.update_task(task_id, title, description, category_id, tag_id)
+    show()
 
 @app.command() 
 def show():
@@ -31,7 +31,7 @@ def show():
     table = Table(show_header=True, header_style="bold red")
     table.add_column("#", style="dim", width=6 )
     table.add_column("Todo", min_width=20, style="cyan")
-    table.add_column("Category", min_width=12, justify="right", style="magenta")
+    table.add_column("Description", min_width=12, justify="right", style="magenta")
     table.add_column("Description", min_width=12, justify="right", style="white")
     table.add_column("Priority", min_width=12, justify="right", style="green")
 

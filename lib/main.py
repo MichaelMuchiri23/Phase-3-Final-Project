@@ -30,4 +30,24 @@ class query_todo():
                 task_table1 = [task_id, task_title, task_description, task_category, task_tag]
                 task_table.append(task_table1)
           return task_table
+    
+    def update_task(task_id, new_title=None, new_description=None, new_category_id=None, new_tag_id=None):
+        task = session.query(Task).filter_by(id=task_id).first()
+        if task:
+            if new_title:
+                task.title = new_title
+            if new_description:
+                task.description = new_description
+            if new_category_id:
+                task.category_id = new_category_id
+            if new_tag_id:
+                task.tag_id = new_tag_id
+            session.commit()
+            return True
+        else:
+            return "Task with ID {} not found".format(task_id)  # Return error message if task not found
+
+
 print(query_todo.fetch_all())
+
+    
