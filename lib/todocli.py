@@ -15,8 +15,13 @@ def add(title:str, description:str, category_id:int, tag_id:int):
     show()
 
 @app.command()
-def delete():
-    pass
+def delete(task_id: int):
+    result = query_todo.delete_task(task_id)
+    if result is True:
+        typer.echo(f"Task with ID {task_id} deleted successfully.")
+        show()
+    else:
+        typer.echo(result)  # Print the error message if the task was not found
 
 @app.command()
 def update(task_id: int, title: str = None, description: str = None, category_id: int = None, tag_id: int = None):

@@ -46,6 +46,16 @@ class query_todo():
             return True
         else:
             return "Task with ID {} not found".format(task_id)  # Return error message if task not found
+        
+
+    def delete_task(task_id):
+        task = session.query(Task).filter_by(id=task_id).first()
+        if task:
+            session.delete(task)
+            session.commit()
+            return True
+        else:
+            return "Task with ID {} not found".format(task_id)  # Return error message if task not found    
 
 
 print(query_todo.fetch_all())
