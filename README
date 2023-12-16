@@ -44,5 +44,5 @@ Examples:
 5.To filter any tasks,run "python3 todocli.py filter {filter_id}"
 
 
-Author: Github accounts(MichaelMuchiri23, codeitownit, KittyRobbin, gichez)
+Author: Github accounts => MichaelMuchiri23, codeitownit, KittyRobbin, gichez
 License: None
