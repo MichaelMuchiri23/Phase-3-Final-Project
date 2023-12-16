@@ -55,7 +55,24 @@ class query_todo():
             session.commit()
             return True
         else:
-            return "Task with ID {} not found".format(task_id)  # Return error message if task not found    
+            return "Task with ID {} not found".format(task_id)  # Return error message if task not found  
+    
+    def fetch_by_tag(tag_id):
+        tasks = session.query(Task).filter_by(tag_id=tag_id).all()
+        task_table = []
+
+        for task in tasks:
+            task_id = str(task.id)
+            task_title = task.title
+            task_description = task.description
+            task_category = str(task.category_id)
+            task_tag = str(task.tag_id)
+
+            task_table1 = [task_id, task_title, task_description, task_category, task_tag]
+            task_table.append(task_table1)
+
+        return task_table
+      
 
 
 print(query_todo.fetch_all())

@@ -7,6 +7,30 @@ console = Console()
 
 app = typer.Typer()
 
+#function for filtering
+def display_tasks(tasks):
+    table = Table(show_header=True, header_style="bold red")
+    table.add_column("#", style="dim", width=6)
+    table.add_column("Todo", min_width=20, style="cyan")
+    table.add_column("Description", min_width=12, justify="right", style="magenta")
+    table.add_column("Category", min_width=12, justify="right", style="white")
+    table.add_column("Status of task", min_width=12, justify="right", style="green")
+
+    for task in tasks:
+        table.add_row(*task)
+
+    console.print(table)
+
+
+def filter_tasks(tag_id=None):
+    console.print("[bold magenta]Filtered Todos[/bold magenta]!")
+
+    if tag_id is not None:
+        tasks = query_todo.fetch_by_tag(tag_id)
+        display_tasks(tasks)
+    else:
+        typer.echo("No tag ID provided.")
+
 @app.command()
 def add(title:str, description:str, category_id:int, tag_id:int):
     typer.echo(f"adding {title}, {description}, {category_id}, {tag_id}")
@@ -27,6 +51,11 @@ def delete(task_id: int):
 def update(task_id: int, title: str = None, description: str = None, category_id: int = None, tag_id: int = None):
     query_todo.update_task(task_id, title, description, category_id, tag_id)
     show()
+
+@app.command()
+def filter(tag_id: int = typer.Option(None, "--tag", help="Filter tasks by tag ID")):
+    filter_tasks(tag_id)
+
 
 @app.command() 
 def show():
