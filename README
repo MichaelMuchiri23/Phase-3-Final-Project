@@ -41,7 +41,7 @@ Examples:
 3.To update the existing list of tasks, run "python3 todocli.py update {task_id} --description (what to change)"
 
 4.To delete any tasks,run "python3 todocli.py delete {task_id}"
-5.To filter any tasks,run "python3 todocli.py filter {filter_id}"
+5.To filter any tasks,run "python3 todocli.py filter {tag_id}"
 
 
 Author: Github accounts => MichaelMuchiri23, codeitownit, KittyRobbin, gichez
