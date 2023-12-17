@@ -32,7 +32,8 @@ Technologies used:
 
 Setting up:
 1.Run "pipenv install" then "pipenv shell" insdie the directory of the app.
-2.Execute the file using the "python3 todocli.py <command>".
+2.Navigate into the lib folder.
+3.Execute the file using the "python3 todocli.py <command>".
 
 Examples:
 1.To show list of tasks run "python3 todocli.py show"
