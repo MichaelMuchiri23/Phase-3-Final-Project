@@ -11,6 +11,7 @@ if __name__ == "__main__":
     session.query(Category).delete()
     session.query(Tag).delete()
     
+    #add data to category model
     categories=[
         Category(
         name = "outdoor",
@@ -20,7 +21,8 @@ if __name__ == "__main__":
     )
         
     ]
-
+    
+    #add data to tag model
     tags = [
         Tag(
         tag_name = "complete"
@@ -30,7 +32,7 @@ if __name__ == "__main__":
     )
 
     ]
-
+#commit and close session
     session.add_all(categories+ tags)
     session.commit()
     session.close()

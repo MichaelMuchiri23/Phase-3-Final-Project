@@ -1,14 +1,15 @@
-TASK MANAGER APP
-Introduction
+# TASK MANAGER APP
+
+## Introduction
 Task Manager CLI application, a Python-based command-line tool integrated with SQLAlchemy 
 for efficient task management.
 
-Problem Statement:
+## Problem Statement:
 In the fast-paced world, managing tasks efficiently is crucial for personal and professional 
 productivity. To address this need, we aim to develop a Command-Line Interface (CLI) 
 application that allows users to create, manage, and organize their tasks seamlessly.
 
-Solution:
+## Solution:
 The Task Manager CLI application is designed to help users manage their tasks efficiently 
 through a command-line interface. Users can create, view, update, and delete tasks, ensuring 
 better organization and productivity.
@@ -18,24 +19,25 @@ This is an application where:
 • Users can modify task details, including title, description and due date.
 • Ability to delete tasks individually.
 
-Minimum Viable Product:
+## Minimum Viable Product:
 1. Create a task.
 2. Update a task
 3. Delete a task.
 4. Display all tasks.
-Technologies used:
+
+## Technologies used:
 1. Python: Programming language for application logic.
 2. SQLAlchemy: ORM for interaction with the SQLite database.
 3. SQLite: Database for storing task information.
 4. Typer: Library for building command-line interfaces.
 5. Rich: for a colorized terminal output.
 
-Setting up:
+## Setting up:
 1.Run "pipenv install" then "pipenv shell" insdie the directory of the app.
 2.Navigate into the lib folder.
 3.Execute the file using the "python3 todocli.py <command>".
 
-Examples:
+## Examples:
 1.To show list of tasks run "python3 todocli.py show"
 2.To add to list of tasks run "python3 todocli.py add {title} {description} {category_id} {tag_id}"
 
@@ -44,6 +46,6 @@ Examples:
 4.To delete any tasks,run "python3 todocli.py delete {task_id}"
 5.To filter any tasks,run "python3 todocli.py filter {tag_id}"
 
-
+## Author and License
 Author: Github accounts => MichaelMuchiri23, codeitownit, KittyRobbin, gichez
 License: None

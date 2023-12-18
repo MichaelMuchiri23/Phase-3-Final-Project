@@ -17,7 +17,7 @@ def display_tasks(tasks):
     table.add_column("Status of task", min_width=12, justify="right", style="green")
 
     for task in tasks:
-        table.add_row(*task)
+        table.add_row(*task) #iterate over filtered tasks
 
     console.print(table)
 
@@ -45,7 +45,7 @@ def delete(task_id: int):
         typer.echo(f"Task with ID {task_id} deleted successfully.")
         show()
     else:
-        typer.echo(result)  # Print the error message if the task was not found
+        typer.echo("Input task ID")  # Print the error message if the task was not found
 
 @app.command()
 def update(task_id: int, title: str = None, description: str = None, category_id: int = None, tag_id: int = None):
@@ -71,7 +71,7 @@ def show():
 
     all_tasks=query_todo.fetch_all()
     for task in all_tasks:
-        table.add_row(*task)
+        table.add_row(*task)  #iterate over all tasks
     
     console.print(table)
     console.print(query_todo.fetch_all())
